@@ -69,6 +69,9 @@ class LoginController extends GetxController {
           'email': email,
           'password': password,
         };
+
+        //check email and password
+
         await authRepository.login(loginData).then((value) {
           Get.snackbar('success', 'now your loggeg in');
           clearEditingController();
@@ -78,7 +81,7 @@ class LoginController extends GetxController {
         }).catchError((error) {
           if (error is AppwriteException) {
             Get.snackbar(
-              'appwrite$error',
+              '${error.message}',
               '',
             );
             print(error);

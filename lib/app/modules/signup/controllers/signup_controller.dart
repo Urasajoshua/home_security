@@ -46,7 +46,8 @@ class SignupController extends GetxController {
   }
 
   String? validateEmail(String value) {
-    if (GetUtils.isEmail(value)) {
+    final trimedValue = value.trim();
+    if (!GetUtils.isEmail(trimedValue)) {
       return "Provide valid email";
     }
     return null;

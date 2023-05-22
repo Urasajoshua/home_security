@@ -164,7 +164,8 @@ class LoginView extends GetView<LoginController> {
                                     email:
                                         controller.emailEditingController.text,
                                     password: controller
-                                        .passwordEditingController.text);
+                                        .passwordEditingController.text
+                                        .trim());
                               },
                               child: Text('login'.toUpperCase())),
                         ),

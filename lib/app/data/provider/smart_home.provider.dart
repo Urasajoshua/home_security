@@ -24,7 +24,7 @@ class SmartHomeProvider {
   Future<models.Session> login(Map map) async {
     final response = await account!.createEmailSession(
       email: map['email'],
-      password: map['email'],
+      password: map['password'],
     );
     return response;
   }
